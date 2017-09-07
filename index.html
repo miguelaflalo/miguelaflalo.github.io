@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<head>
+	<title>Miguel Aflalo</title>
+
+	<meta charset="utf-8" />
+	<meta name="description" content="Miguel aflalo persoanl GitHub page..."/>
+	<meta name="keywords" content="Miguel aflalo, architecture, brazil"/>
+	<meta name="author" content="Miguel Aflalo" />
+
+	<link rel="shortcut icon" href="favicon.ico">
+
+	<style>
+		img
+		{
+			display: block;
+			position:fixed;
+			height:100%;
+			top:0px;
+			left:0px;
+			transition:left 0.5s;
+		}
+	</style>
+
+	<script>
+		var percentage = 0;
+
+		window.onload = function()
+		{
+			document.onwheel = function(e)
+			{
+				percentage += Math.sign(e.deltaY)*2;
+				if(percentage>100)
+					percentage = 100;
+
+				if(percentage<0)
+					percentage = 0;
+
+				console.log(percentage);
+
+				var all = document.querySelectorAll("img");
+
+				for(var i=0; i<all.length; ++i)
+				{
+					var Tw = all[i].width;
+					var Ww = window.innerWidth;
+					var Dw = Tw-Ww;
+					all[i].style.left = (-Dw*(percentage/100))+"px";
+				}
+			}
+		}
+	</script>
+</head>
+
+<body>
+	<img src="0.svg">
+	<img src="1.svg">
+	<img src="2.svg">
+	<img src="3.svg">
+	<img src="4.svg">
+</body>
+
+</html>
