@@ -18,7 +18,7 @@
 			height:100%;
 			top:0px;
 			left:0px;
-			transition:left 0.5s;
+			transition:left 1.5s;
 		}
 	</style>
 
@@ -29,7 +29,7 @@
 		{
 			document.onwheel = function(e)
 			{
-				percentage += Math.sign(e.deltaY)*2;
+				percentage += Math.sign(e.deltaY)*1;
 				if(percentage>100)
 					percentage = 100;
 
@@ -53,11 +53,12 @@
 </head>
 
 <body>
-	<img src="0.svg">
-	<img src="1.svg">
-	<img src="2.svg">
-	<img src="3.svg">
-	<img src="4.svg">
+
+	<img src="3-03.svg">
+	<img src="2-02.svg">
+	<img src="1-01.svg">
+
+
 </body>
 
 </html>
